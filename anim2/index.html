@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="cssreset-min.css">
 </head>
 <body>
-    <button id="freshBtn">刷新</button>
     <div id="lotteryContainer"></div>
     <script src="Lottery.js"></script>
     <script>
@@ -29,18 +28,6 @@
             var iheight = window.innerHeight;
             var lottery = new Lottery('lotteryContainer', '112.png', 'image', iwidth, iheight);
             lottery.init('i.png', 'image');
-
-            document.getElementById('freshBtn').onclick = function() {
-                lottery.init(getRandomStr(10), 'text');
-            }
-        }
-
-        function getRandomStr(len) {
-            var text = "";
-            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            for( var i=0; i < len; i++ )
-                text += possible.charAt(Math.floor(Math.random() * possible.length));
-            return text;
         }
     </script>
 </body>
