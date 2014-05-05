@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
 <title>
 	演示动画
 </title>
@@ -41,6 +43,7 @@
 	</style>
 	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
 	<script type="text/javascript">
+		document.documentElement.webkitRequestFullScreen();
 		window.click = false;
 		$(".a").bind('click', function(){
 			if (click === false) {
