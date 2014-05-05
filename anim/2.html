@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf8">
+<title>
+	演示动画
+</title>
+<link rel="stylesheet" type="text/css" href="cssreset-min.css">
+<body>
+	<img class="i" src="2.png">
+	<div class="a"></div>
+	<style type="text/css">
+		.i{
+			width: 100%;
+		}
+		.a{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-image: -webkit-gradient(linear,0% 0%, 0% 100%, from(rgba(153,153,153,0.9)), to(rgba(255,255,255,0.0)));
+		}
+		.anim{
+			opacity: 0.0;
+			-webkit-animation-name:'cloud';
+			-webkit-animation-duration: 8s;
+			-webkit-animation-timing-function: ease-in-out;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-direction: alternate;
+		}
+		@-webkit-keyframes 'cloud'{
+			0% {
+				opacity: 1.0;
+			}
+			50% {
+				opacity: 0.0
+			}
+			100% {
+				opacity: 1.0;
+			}
+		}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+	<script type="text/javascript">
+		window.click = false;
+		$(".a").bind('click', function(){
+			if (click === false) {
+				click = true;
+				$(".a").addClass("anim");
+			};
+		});
+		$(".a").bind('webkitAnimationEnd', function(){
+			$(".a").removeClass("anim");
+			click = false;
+		});
+	</script>
+</body>
+</html>
